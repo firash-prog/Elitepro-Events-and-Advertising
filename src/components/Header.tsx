@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
-import logo from "@/assets/elitepro/logo.png.asset.json";
+import logo from "@/assets/elitepro/logo.png";
 
 const navItems = [
   { label: "Services", path: "/work" },
@@ -53,7 +53,7 @@ export function Header({ revealMode = false }: HeaderProps) {
         <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <img src={logo.url} alt="ElitePro Events & Advertising" className="h-10 md:h-12 w-auto" />
+            <img src={logo} alt="ElitePro Events & Advertising" className="h-10 md:h-12 w-auto" />
             <span className="hidden sm:flex flex-col leading-tight">
               <span className="font-display text-base md:text-lg font-bold tracking-tight text-foreground">ELITEPRO</span>
               <span className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground">Events &amp; Advertising</span>

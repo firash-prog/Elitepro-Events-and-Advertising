@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react";
-import logo from "@/assets/elitepro/logo.png.asset.json";
+import logo from "@/assets/elitepro/logo.png";
 
 interface FooterProps {
   variant?: "default" | "echelon";
@@ -79,7 +79,7 @@ export function Footer({ variant = "default" }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src={logo.url} alt="ElitePro" className="h-12 w-auto" />
+              <img src={logo} alt="ElitePro" className="h-12 w-auto" />
               <div>
                 <p className="font-display text-lg font-bold">ELITEPRO</p>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground">Events &amp; Advertising</p>

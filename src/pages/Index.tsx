@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { projects } from "@/data/projects";
-import logo from "@/assets/elitepro/logo.png.asset.json";
+import logo from "@/assets/elitepro/logo.png";
 
 const hubs = [
   { city: "Riyadh", role: "Capital Epicenter" },
@@ -104,7 +104,7 @@ const Index = () => {
             style={{ transform: `translate(${-mousePosition.x * 20}px, ${-mousePosition.y * 20}px)` }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-muted via-card to-primary/30 rounded-3xl" />
-            <img src={logo.url} alt="ElitePro" className="relative w-full h-full object-contain p-10" />
+            <img src={logo} alt="ElitePro" className="relative w-full h-full object-contain p-10" />
           </div>
         </div>
       </section>
