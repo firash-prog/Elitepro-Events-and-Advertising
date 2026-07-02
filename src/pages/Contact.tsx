@@ -1,6 +1,6 @@
 import { Layout } from "@/components/Layout";
 import { Mail, Phone, Instagram, Linkedin, MapPin, Globe } from "lucide-react";
-import logo from "@/assets/elitepro/logo.png.asset.json";
+import logo from "@/assets/elitepro/logo.png";
 
 const Contact = () => {
   return (
@@ -56,7 +56,7 @@ const Contact = () => {
           <div className="hidden lg:block sticky top-32">
             <div className="aspect-square rounded-3xl flex items-center justify-center p-16"
               style={{ background: "linear-gradient(135deg, hsl(var(--muted)), hsl(var(--card)))" }}>
-              <img src={logo.url} alt="ElitePro" className="w-full h-full object-contain" />
+              <img src={logo} alt="ElitePro" className="w-full h-full object-contain" />
             </div>
             <div className="grid grid-cols-4 gap-3 mt-6">
               {["Riyadh", "Jeddah", "Dammam", "Dubai"].map((c) => (
