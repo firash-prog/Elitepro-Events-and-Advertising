@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://artful-perspective-show.lovable.app/sitemap.xml
