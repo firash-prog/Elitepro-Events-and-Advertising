@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
+import WhatsAppCTA from "./WhatsAppCTA";
 
 interface LayoutProps {
   children: ReactNode;
@@ -26,6 +27,7 @@ export function Layout({
       {!hideFooter && (
         <Footer variant={showEchelonFooter ? "echelon" : "default"} />
       )}
+          <WhatsAppCTA />
     </div>
   );
 }
