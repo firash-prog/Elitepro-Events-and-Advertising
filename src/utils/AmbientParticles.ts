@@ -53,6 +53,7 @@ export class AmbientParticles {
   private init() {
     this.resize();
     this.collectContentElements();
+    // this.drawConnections(0); // Disabled to save memory
     this.spawnParticles();
     this.bindEvents();
     this.observeVisibility();
@@ -71,11 +72,12 @@ export class AmbientParticles {
   }
 
   private getParticleCount(): number {
+    // Reduce particle counts for better memory usage
     const w = window.innerWidth;
-    if (this.lowPower) return 10;
-    if (w < 768) return 20;
-    if (w < 1024) return 35;
-    return 60;
+    if (this.lowPower) return 2;
+    if (w < 768) return 3;
+    if (w < 1024) return 5;
+    return 7;
   }
 
   private randomColor(): string {
@@ -140,17 +142,8 @@ export class AmbientParticles {
       this.resize();
       this.collectContentElements();
     });
-    if (!this.prefersReduced && window.innerWidth >= 1024) {
-      this.section.addEventListener('mousemove', (e) => {
-        const rect = this.canvas.getBoundingClientRect();
-        this.mouse.x = e.clientX - rect.left;
-        this.mouse.y = e.clientY - rect.top;
-      });
-      this.section.addEventListener('mouseleave', () => {
-        this.mouse.x = -1000;
-        this.mouse.y = -1000;
-      });
-    }
+// Mouse interaction disabled for performance
+
   }
 
   private observeVisibility() {
@@ -215,9 +208,10 @@ export class AmbientParticles {
       const near = !this.isSafePosition(p.x, p.y);
       const opacity = near ? 0 : p.opacity;
       if (opacity <= 0) return;
+      // Background particles (simplified)
+      this.ctx.fillStyle = p.color.replace('0.', opacity.toString());
       this.ctx.beginPath();
       this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      this.ctx.fillStyle = p.color.replace('0.', opacity.toString());
       this.ctx.fill();
     });
   }
